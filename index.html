@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조연습 슬라이드</title>
+    <style>
+        *{margin:0; padding:0;}
+        li{list-style: none;}
+        a{
+            text-decoration: none;
+            color:inherit;
+            display:block;
+        }
+        img{
+            display:block;
+            border:none;
+        }
+        .cf:after{
+            content:""; display:block;
+            clear:both;
+        }
+
+        #wrap{
+            width:1200px; margin:0 auto;
+            height:700px;
+            background:#ccc;
+        }
+        header{height:100px; background:#eef;}
+        #slide{height:300px; background:#ccf;}
+        #content{height:200px; background:#aaf;}
+        footer{height:100px; background:#eef;}
+
+        /* 슬라이드 */
+        #slide{width:1200px; height:300px;
+            overflow:hidden;
+        }
+        #slide ul{width:400%;
+            animation: slide 9s infinite;
+        }
+        #slide li{float:left;
+            position: relative;
+        }
+        @keyframes slide{
+            0%{margin-left:0;}
+            33.3333%{margin-left:-100%;}
+            66.6666%{margin-left:-200%;}
+            100%{margin-left:-300%;}
+        }
+        .text{
+            position: absolute;
+            bottom:0px;
+            right:0px;
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <div id="slide">
+            <ul class="cf">
+                <li><img src="img/slide1.jpg" alt="">
+                    <div class="text">슬라이드입니다.</div>
+                </li>
+                <li><img src="img/slide2.jpg" alt="">
+                    <div class="text">슬라이드2입니다.</div>
+                </li>
+                <li><img src="img/slide3.jpg" alt="">
+                    <div class="text">슬라이드3입니다.</div>
+                </li>
+                <li><img src="img/slide1.jpg" alt="">
+                    <div class="text">슬라이드입니다.</div>
+                </li>
+            </ul>
+        </div>
+        <div id="content"></div>
+        <footer></footer>
+    </div>
+</body>
+</html>
